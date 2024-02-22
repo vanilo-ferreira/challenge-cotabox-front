@@ -46,7 +46,14 @@ const useStyles = makeStyles((theme) => ({
   containerGrafico: {
     minWidth: '50%',
     display: 'flex',
-    alignItems: 'start'
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+
+  table: {
+    "& .MuiTableCell-root": {
+      borderLeft: "1px solid rgba(224, 224, 224, 1)"
+    }
   },
 
   container: {
@@ -72,6 +79,7 @@ const useStyles = makeStyles((theme) => ({
 
   containerTabela: {
     maxWidth: '50%',
+    height: 600,
     display: 'flex',
     justifyContent: 'end',
     alignItems: 'start'

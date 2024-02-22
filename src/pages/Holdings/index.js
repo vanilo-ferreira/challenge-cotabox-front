@@ -24,13 +24,14 @@ export const options = {
   chartArea: {
     left: 10,
     top: 0,
-    height: '50%',
+    height: '50%'
   },
   pieSliceText: 'none',
   legend: {
+    maxLines: 0,
     position: "right",
     alignment: "center",
-    textStyle: { fontSize: 10 }
+    textStyle: { fontSize: 14 }
   },
 };
 
@@ -135,13 +136,13 @@ function Holdings() {
           <div className={classes.containerTabela}>
 
             <TableContainer component={Paper}>
-              <Table aria-label="simple table">
+              <Table className={classes.table} aria-label="simple table">
                 <TableHead>
                   <TableRow>
-                    <TableCell align="right"></TableCell>
-                    <TableCell align="right">First_name</TableCell>
-                    <TableCell align="left">Last_name</TableCell>
-                    <TableCell align="left">Participation</TableCell>
+                    <TableCell align=""></TableCell>
+                    <TableCell width="100px" align="left">First_name</TableCell>
+                    <TableCell width="100px" align="left">Last_name</TableCell>
+                    <TableCell align="center">Participation</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -152,7 +153,7 @@ function Holdings() {
                       <TableCell align="center">{row.number}</TableCell>
                       <TableCell align="left">{row.first_name}</TableCell>
                       <TableCell align="left">{row.last_name}</TableCell>
-                      <TableCell align="left">{row.participation}</TableCell>
+                      <TableCell align="center">{row.participation}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -160,16 +161,14 @@ function Holdings() {
             </TableContainer>
           </div>
 
-          <div>
             <div className={classes.containerGrafico}>
               <Chart
                 chartType="PieChart"
-                width="100%"
-                height="400px"
+                width="600px"
+                height="500px"
                 data={chartData}
                 options={options}
               />
-            </div>
           </div>
         </div>
       </div>
