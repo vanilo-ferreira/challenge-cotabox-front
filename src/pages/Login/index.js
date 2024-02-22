@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   Card,
   CardContent,
@@ -10,11 +10,30 @@ import {
 import useStyles from "./styles";
 
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom"
+
+import { AuthContext } from "../../routes";
 
 function Login() {
   const classes = useStyles();
   const { register, handleSubmit } = useForm();
+  const { logar } = useContext(AuthContext);
+  const history = useHistory();
+
+  async function onSubmit(data) {
+    const resposta = await fetch("http://localhost:8000/login", {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-type': 'application/json'
+      }
+    });
+
+    const { token } = await resposta.json();
+    logar(token);
+
+    history.push("/holdings");
+  }
 
   return (
     <div className={classes.root}>
