@@ -130,7 +130,7 @@ function Holdings() {
 
       <div className={classes.container} recarregar={() => setCarregar(true)}>
         <Typography className={classes.titulo} variant="h4">{company.name}</Typography>
-        <Typography className={classes.parafrafo} variant="h6">Dados de 'participation:'</Typography>
+        <Typography className={classes.parafrafo} variant="h6">Dados de procentagem da 'participation' por colaborador:</Typography>
 
         <div className={classes.containerInformacoes}>
           <div className={classes.containerTabela}>
@@ -153,7 +153,7 @@ function Holdings() {
                       <TableCell align="center">{row.number}</TableCell>
                       <TableCell align="left">{row.first_name}</TableCell>
                       <TableCell align="left">{row.last_name}</TableCell>
-                      <TableCell align="center">{row.participation}</TableCell>
+                      <TableCell align="center">{row.participation}%</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
