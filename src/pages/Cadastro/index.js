@@ -10,14 +10,14 @@ import {
 import useStyles from './styles';
 
 import { useForm } from 'react-hook-form';
-import { Link, useNavigate} from 'react-router-dom';
+import { Link, useHistory} from 'react-router-dom';
 
 import InputSenha from '../../components/InputSenha';
 
 function Cadastro() {
   const classes = useStyles();
   const { register, handleSubmit } = useForm();
-  const navigate = useNavigate();
+  const history = useHistory();
 
   async function onSubmit(data) {
 
@@ -29,7 +29,7 @@ function Cadastro() {
       }
     });
 
-    navigate('/');
+    history.push('/');
   }
 
   return (
