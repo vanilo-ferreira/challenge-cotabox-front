@@ -1,8 +1,21 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
-  form: {
+  containerTopo: {
     backgroundColor: '#00b8e2',
+  },
+  botaoSair: {
+    height: 20,
+    width: 50,
+    border: 'solid 2px white',
+
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 10,
+    marginLeft: 10,
+    marginTop: 10,
+  },
+  form: {
     height: '150px',
     display: 'flex',
     justifyContent: 'center',
@@ -62,7 +75,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'end',
     alignItems: 'start'
-  }
+  },
 }));
 
 export default useStyles;
