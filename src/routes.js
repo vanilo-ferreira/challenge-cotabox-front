@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   BrowserRouter,
-  Switch,
+  Routes,
   Route
 } from "react-router-dom";
 
@@ -13,11 +13,11 @@ function Rotas() {
 
   return (
     <BrowserRouter>
-      <Switch>
-        <Route path="/cadastro" component={Cadastro} />
-        <Route path="/" exact component={Login} />
-        <Route path="/holdings" exact component={Holdings} />
-      </Switch>
+      <Routes>
+        <Route path="/cadastro" element={<Cadastro />} />
+        <Route path="/" exact element={<Login />} />
+        <Route path="/holdings" exact element={<Holdings />} />
+      </Routes>
     </BrowserRouter>
   )
 }
