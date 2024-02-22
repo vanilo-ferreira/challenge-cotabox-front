@@ -37,7 +37,7 @@ export const options = {
 function Holdings() {
   const classes = useStyles();
   const { register, handleSubmit } = useForm();
-  const { token } = useContext(AuthContext);
+  const { token, deslogar } = useContext(AuthContext);
   const [carregar, setCarregar] = useState(false);
   const [chartData, setChartData] = useState([]);
   const [company, setCompany] = useState({ name: '', email: '' });
@@ -71,8 +71,6 @@ function Holdings() {
 
       const empresaRetornada = await resposta.json();
 
-      console.log(empresaRetornada);
-
       dados(empresaRetornada);
     }
     obterParticipation();
@@ -89,8 +87,6 @@ function Holdings() {
       const companyRetornada = await resposta.json();
 
       setCompany(companyRetornada);
-
-      console.log(companyRetornada);
     }
     checkProfile();
   }, []);
@@ -117,14 +113,19 @@ function Holdings() {
 
   return (
     <>
-      <form className={classes.form} noValidate autoComplete="off" onSubmit={handleSubmit(onSubmit)}>
-        <TextField className={classes.input} label="First Name" variant='outlined' {...register('first_name', { required: true })} />
-        <TextField className={classes.input} label="Last Name" variant='outlined' {...register('last_name', { required: true })} />
-        <TextField className={classes.input} label="Participation" variant='outlined' {...register('participation', { required: true })} />
-        <Button className={classes.botao} type="submit">
-          SEND
+      <div className={classes.containerTopo}>
+        <Button className={classes.botaoSair} type="submit" onClick={() => deslogar()}>
+          SAIR
         </Button>
-      </form>
+        <form className={classes.form} noValidate autoComplete="off" onSubmit={handleSubmit(onSubmit)}>
+          <TextField className={classes.input} label="First Name" variant='outlined' {...register('first_name', { required: true })} />
+          <TextField className={classes.input} label="Last Name" variant='outlined' {...register('last_name', { required: true })} />
+          <TextField className={classes.input} label="Participation" variant='outlined' {...register('participation', { required: true })} />
+          <Button className={classes.botao} type="submit">
+            SEND
+          </Button>
+        </form >
+      </div>
 
       <div className={classes.container} recarregar={() => setCarregar(true)}>
         <Typography className={classes.titulo} variant="h4">{company.name}</Typography>
