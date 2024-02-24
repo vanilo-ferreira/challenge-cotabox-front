@@ -21,7 +21,7 @@ function Cadastro() {
 
   async function onSubmit(data) {
 
-    await fetch("http://localhost:8000/companies", {
+    await fetch("https://back-challenge-cotabox.up.railway.app/companies", {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {

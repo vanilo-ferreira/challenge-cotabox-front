@@ -21,7 +21,7 @@ function Login() {
   const history = useHistory();
 
   async function onSubmit(data) {
-    const resposta = await fetch("http://localhost:8000/login", {
+    const resposta = await fetch("https://back-challenge-cotabox.up.railway.app/login", {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {

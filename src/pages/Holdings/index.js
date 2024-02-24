@@ -64,7 +64,7 @@ function Holdings() {
 
   useEffect(() => {
     async function obterParticipation() {
-      const resposta = await fetch("http://localhost:8000/holdings", {
+      const resposta = await fetch("https://back-challenge-cotabox.up.railway.app/holdings", {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -79,7 +79,7 @@ function Holdings() {
 
   useEffect(() => {
     async function checkProfile() {
-      const resposta = await fetch("http://localhost:8000/perfil", {
+      const resposta = await fetch("https://back-challenge-cotabox.up.railway.app/profile", {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -97,7 +97,7 @@ function Holdings() {
     setCarregar(true);
 
 
-    await fetch("http://localhost:8000/holdings", {
+    await fetch("https://back-challenge-cotabox.up.railway.app/holdings", {
       method: 'POST',
       body: JSON.stringify({
         first_name: data.first_name,
@@ -130,7 +130,7 @@ function Holdings() {
 
       <div className={classes.container} recarregar={() => setCarregar(true)}>
         <Typography className={classes.titulo} variant="h4">{company.name}</Typography>
-        <Typography className={classes.parafrafo} variant="h6">Dados de procentagem da 'participation' por colaborador:</Typography>
+        <Typography className={classes.parafrafo} variant="h6">Dados de procentagem referente a cada participante da distribuiçãodo.</Typography>
 
         <div className={classes.containerInformacoes}>
           <div className={classes.containerTabela}>
