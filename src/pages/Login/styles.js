@@ -9,7 +9,8 @@ const useStyles = makeStyles((theme) => ({
   card: {
     maxWidth: 392,
     padding: "88px 86px",
-    borderRadius: "0px 8px 9px -5px rgba(0, 0, 0, 0.2), 0px 15px 22px 2px rgba(0, 0, 0, 0.14), 0px 6px 28px 5px rgba(0, 0, 0, 0.12)",
+    borderRadius: 16,
+    boxShadow: "0px 8px 9px -5px rgba(0, 0, 0, 0.2), 0px 15px 22px 2px rgba(0, 0, 0, 0.14), 0px 6px 28px 5px rgba(0, 0, 0, 0.12)",
 
     "& > div": {
       padding: 0
@@ -36,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
   },
   botao: {
     color: "#FFF",
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: '#00b8e2',
     boxShadow: "none",
     alignSelf: "center",
     marginBottom: "24px",
