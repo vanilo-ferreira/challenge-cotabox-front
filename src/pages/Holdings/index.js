@@ -10,13 +10,15 @@ import { useForm } from "react-hook-form";
 
 import { Chart } from "react-google-charts";
 
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Paper
+} from '@material-ui/core';
 
 export const options = {
   pieHole: 0.5,
@@ -130,7 +132,8 @@ function Holdings() {
 
       <div className={classes.container} recarregar={() => setCarregar(true)}>
         <Typography className={classes.titulo} variant="h4">{company.name}</Typography>
-        <Typography className={classes.parafrafo} variant="h6">Dados de procentagem referente a cada participante da distribuiçãodo.</Typography>
+        <Typography variant="subtitle1">Dados de porcentagem referente a cada participante da distribuição.</Typography>
+        <Typography className={classes.parafrafo} variant="subtitle2">A soma das porcentagens não devem passar de 100%.</Typography>
 
         <div className={classes.containerInformacoes}>
           <div className={classes.containerTabela}>
@@ -161,14 +164,14 @@ function Holdings() {
             </TableContainer>
           </div>
 
-            <div className={classes.containerGrafico}>
-              <Chart
-                chartType="PieChart"
-                width="600px"
-                height="500px"
-                data={chartData}
-                options={options}
-              />
+          <div className={classes.containerGrafico}>
+            <Chart
+              chartType="PieChart"
+              width="600px"
+              height="500px"
+              data={chartData}
+              options={options}
+            />
           </div>
         </div>
       </div>
