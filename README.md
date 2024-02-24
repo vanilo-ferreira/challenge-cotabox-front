@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# Challenge Cotabox
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Nesse projeto foi desenvolvida uma aplicação em React com 3 páginas: 
+- Página de Cadastro (/cadastro);
+- Página de Login (/);
+- Página de porcentagem de participação de distribuição de uma empresa (/holdings). 
 
-## Available Scripts
+#### `DESENVOLVIMENTO`
 
-In the project directory, you can run:
+- Aplicação foi desenvolvida em React;
+- A estilização das páginas foi realizada utilizando o `Material UI`;
+- O gráfico foi desenvolvido utilizando a biblioteca `react-google-charts`;
 
-### `npm start`
+### `DEPLOY`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+A aplicação ainda não teve o deploy realizado
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Execute a plicação no modo de desenvolvimento, através do comando `npm start` .\
+A visualização poderá ser feita no link [http://localhost:3000](http://localhost:3000) através do navegador.
 
-### `npm test`
+### `SERVIÇOS`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+A aplicação se comunica com a API back-challenge-cotabox, através do seguinte link: https://back-challenge-cotabox.up.railway.app. 
 
-### `npm run build`
+## Rotas
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### `/cadastro`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Nessa tela será possível cadastrar uma empresa no na API.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Para isso é necessário:
 
-### `npm run eject`
+- Adicionar o nome da empresa;
+- Adicionar o e-mail da empresa;
+- Adicionar uma senha.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![Tela de Cadastro](./public/assets/cadastro.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### `/login`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Nessa tela será possível um empresa cadastrada iniciar o sistema.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Para isso é necessário:
 
-## Learn More
+- Informar o e-mail da empresa;
+- Informar a senha.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![Tela de Login](./public/assets/login.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### `/holdings`
 
-### Code Splitting
+### ATENÇÃO: Está tela é protegida e valida através de token se a empresa é apta a acessá-la ou não.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Nessa é possível visualizar e adicionar as porcentagens de participação de distribuição da empresa logada.
 
-### Analyzing the Bundle Size
+Para adicionar uma porcentagem de participação, deve: 
+- Informar o primeiro nome (First Name) do colaborador;
+- Informar o último nome (Last Name) do colaborador;
+- Informar o valor da porcentagem da participação (Participation);
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+`IMPORTANTE:` A soma das porcentagens adicionadas não devem passar de 100%. 
 
-### Making a Progressive Web App
+![Tela de Login](./public/assets/holdings2.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Caso a empresa não tenha nenhuma porcentagem adicionada, a tela será exibida como na figura abaixo: 
+![Tela de Login](./public/assets/holdings1.png)
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Para deslogar basta clicar no botão (`SAIR`), na parte superior do lado esquerdo da tela;
