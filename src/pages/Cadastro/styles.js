@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
   },
   botao: {
     color: '#FFF',
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: '#00b8e2',
     boxShadow: 'none',
     alignSelf: 'center',
     marginBottom: 24,
